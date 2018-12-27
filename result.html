@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>theMuseum</title>
+  <meta name="description" content="Flickr上をキーワードで検索し、結果をスライドショーで見ることができます。">
+  <meta name="keywords" content="写真,スライドショー">
+  <meta name="author" content="chikuwaa@github">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- original CSS -->
+  <link rel="stylesheet" href="css/museum.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- JavaScript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- museum JS -->
+  <script src="javascript/museum.js"></script>
+  
+</head>
+<body id="result">
+
+<header>
+    <div class="container">
+        <h1><a href="index.html"><img src="images/logo.png" alt="theMuseum" srcset="images/logox2.png 2x" /></a></h1>
+        <p class="btn"><a class="info-icon" href="#guide"><img src="images/info.png" alt="infomation" srcset="images/infox2.png 2x" /></a>
+        <a class="info-icon icon-close" href="#" ><img src="images/close.png" alt="閉じる" srcset="images/closex2.png 2x" /></a></p>
+    </div>
+</header>
+
+<div id="main">
+    <div id="slide_area">
+            <div class="photo"><img src="" alt="写真" /></div>
+    </div>
+    <!-- slide_area -->
+
+    <div class="container" id="info_container">
+        <div id="detail">
+            <h3><span class="page_n"></span>枚目/<span class="page_a"></span></h3>
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>露出時間</th><td>XX秒</td>
+                    </tr>
+                    <tr>
+                        <th>F値</th><td>X.X</td>
+                    </tr>
+                    <tr>
+                        <th>シャッタースピード</th><td>X/XXX</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>絞り</th><td>XX</td>
+                    </tr>
+                    <tr>
+                        <th>露出補正</th><td>+1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- detail -->
+    
+        <div id="navi" class="pc_">
+            <div class="container">
+                <div class="photo prv"><img src="" alt="前" /></div>
+                <div class="photo show"><img src="" alt="展示中" /></div>
+                <div class="photo next"><img src="" alt="次" /></div>
+            </div>
+            <i class="fa fa-caret-left b_btn" aria-label="前へ"></i>
+            <i class="fa fa-caret-right n_btn" aria-label="次へ"></i>
+        </div>
+        <!-- navi -->
+    </div>
+    <!-- info_container -->
+
+</div>
+<!-- main -->
+
+<div id="guide">
+</div>
+<!-- オーバーレイ -->
+
+<div id="howto">
+    <div class="howto_slide">
+        <p class="howto_1">展示中の写真</p>
+        <p class="sp_ howto_2">左右フリックで表示を切り替えられます</p>
+    </div>
+    <div class="howto_info">
+        <div class="howto_detail">
+            <p class="howto_3">表示位置/全枚数</p>
+            <p class="howto_4"><span class="sp_">下からスワイプすると</span>写真の情報が表示されます。<br />空欄の場合は情報がありません。</p>
+        </div>
+        <div class="howto_navi pc_" >
+            <div>
+            <p>一つ前の写真</p>
+            <p>現在の写真</p>
+            <p>次の写真</p>
+            </div>
+            <p class="howto_5">クリックで表示を切り替えられます</p>
+            
+        </div>
+    </div>
+</div>
+<!-- howto -->
+
+<footer>
+    <p class="copyright">made by <a href="https://github.com/chikuwaa" >https://github.com/chikuwaa</a></p>
+</footer>
+
+</body>
+</html>

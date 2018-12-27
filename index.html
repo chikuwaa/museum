@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>theMuseum</title>
+  <meta name="description" content="Flickr上をキーワードで検索し、結果をスライドショーで見ることができます。">
+  <meta name="keywords" content="写真,スライドショー">
+  <meta name="author" content="chikuwaa@github">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/museum.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- JavaScript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- top js -->
+  <script src="javascript/top.js"></script>
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1><a href="index.html"><img src="images/logo.png" alt="theMuseum" srcset="images/logox2.png 2x" /></a></h1>
+        <p class="btn" ><img src="images/info.png" alt="infomation" srcset="images/infox2.png 2x" /></p>
+    </div>
+</header>
+
+<div>
+    <div id="search_area">
+        
+        <form action="./result.html" method="get">
+            <input type="search" name="search" placeholder="例)桜並木">
+        </form>
+        <div class="container">
+            <span>好きなテーマの展示会を</span><span>開きましょう</span>
+        </div>
+        <div class="white"></div>
+    </div>
+    <!-- search_area -->
+    
+    <div id="info">
+        <h2><img src="images/info_title.png" alt="infomation" srcset="images/info_title_x2.png 2x" /></h2>
+
+        <div class="container">
+            <div class="box">
+                <img src="images/info01.jpg" srcset="images/info01x2.jpg 2x" />
+                <p>指定したキーワードでflickrを検索し、検索結果をスライドショー形式で見ることができます。</p>
+            </div>
+            <div class="box">
+                <img src="images/info02.jpg" srcset="images/info02x2.jpg 2x" />
+                <p>検索画像は自動で切り替わります。シャッタースピードなどの情報も表示しているので、気になった写真は確認してみましょう。</p>
+            </div>
+            <div class="box">
+                <img src="images/info03.jpg" srcset="images/info03x2.jpg 2x" />
+                <p>表示中写真の一つ前・一つ後へのスキップもご自由にどうぞ。</p>
+            </div>
+        </div>
+        <!-- container -->
+        
+    </div>
+    <!-- info -->
+
+</div>
+<!-- main -->
+
+
+<footer>
+    <p class="return_top"><i class="fa fa-chevron-circle-up" aria-label="topへ戻る"></i></p>
+    <p class="copyright">made by <a href="https://github.com/chikuwaa" >https://github.com/chikuwaa</a></p>
+</footer>
+
+</body>
+</html>

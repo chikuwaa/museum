@@ -1,0 +1,581 @@
+@charset "utf-8";
+
+/*
+変数定義--------------------*/
+$ja_font : Georgia,游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+$blue : #266fd8;
+$blue_black : #112d54;
+$pink : #fe0084;
+$pink_black : #541032;
+$gray : #f1f1f1;
+
+/*
+共通部分--------------------*/
+@mixin fontsize($size: 24,$base: 10){
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}// fontsize px&rem
+
+html{
+    font-size:62.5%;
+    height: 100%;
+}
+
+body{
+    font-family:$ja_font;
+
+}
+
+.container{
+    display:flex;
+}
+
+a{
+    text-decoration:none;
+    color:$blue;
+}
+a:hover {
+  color: $blue_black; 
+}
+
+.pc_{
+    display: none;
+}
+@media (min-width:551px){
+    .sp_{
+        display: none;
+    }
+
+    .pc_{
+        display: block;
+    }
+}
+
+img{
+    vertical-align:bottom;
+    max-width:100%;
+    box-sizing: border-box;
+}
+
+/* header */
+header{
+    background-color:#000000;
+
+    margin-bottom:5px;
+    position:relative;
+    z-index:5;
+
+    .container{
+        justify-content:space-between;
+        padding:10px;
+    }
+    
+    h1{
+        flex-basis: 50%;
+    }
+    
+    .btn{
+        flex-basis: 13%;
+        text-align: right;
+    }
+    
+    .icon-close{
+        display:none;
+    }
+
+    @media (min-width:551px){
+        margin-bottom:10px;
+        
+        .container{
+            padding: 1.5% 50px;
+            max-width:1024px;
+            margin:0 auto;
+        }
+        h1{
+            flex-basis: 25%;
+        }
+        .btn{
+            flex-basis: 7%;
+        }
+        
+    }//PC用    
+}
+
+/* footer */
+footer{
+    margin-bottom:5px;
+    position: relative;
+    z-index: 5;
+
+    .return_top{
+        padding: 0px 10px;
+        text-align:right;
+        @include fontsize(40);
+        margin-bottom:15px;
+        color:$blue;
+
+    }
+    .return_top:hover{
+        color: $blue_black; 
+    }
+    
+    .copyright{
+        background-color:#000000;
+        color:#fff;
+        @include fontsize(10);
+        
+        padding:10px;
+        a{
+            color:#fff;
+        }
+    }
+    
+    @media (min-width:551px){
+        margin-bottom:20px;
+        top: auto;
+
+        .return_top{
+            @include fontsize(70);
+            padding:0px 50px;
+            margin: 0px auto 15px auto;
+            max-width: 1024px;
+
+        }
+        
+        .copyright{
+            @include fontsize(14);
+            padding:15px 50px;
+        }
+
+    }
+    
+}//footer
+
+/*
+index.html--------------------*/
+/* search_area */
+#search_area{
+    background-size: cover;
+    height:350px;
+
+    position: relative;
+    margin-bottom: 200px;
+    
+    form{
+        padding: 0px 10px;
+        position: relative;
+        z-index: 2;
+        top: 40%;
+    }
+    input[type="search" ] {
+        width: 100%;
+        border: 1.5px solid $blue;
+        @include fontsize(10);
+        padding:5px 5px;
+        font-family: inherit;
+    }
+    :placeholder-shown{
+        color:#e3e3e3;
+    }
+    .container{
+        position: relative;
+        z-index: 2;
+        top: 45%;
+        padding:0px 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    span{
+        display:block;
+        @include fontsize(24);
+        font-weight: bold;
+        text-align:center;
+    }
+    .white{
+        top: 0;
+        left: 0;
+        height: 350px;
+        width: 100%;
+        background: white;
+        opacity: 0.5;
+        z-index: 1;
+        position: absolute;
+    }
+
+    @media (min-width:551px){
+        height:600px;
+        
+        form{
+            padding: 0px 50px;
+            text-align: center;
+        }
+        input[type="search" ] {
+            width: 55%;
+            @include fontsize(14);
+            padding:10px 20px;
+        }
+        .container{
+            padding: 0px 50px;
+        }
+        span{
+            @include fontsize(48);
+        }
+        .white{
+            height:600px;
+        }
+    }//PC用
+
+}//#search_area
+
+/* info */
+#info{
+    margin:0px 10px;
+
+    h2{
+        background-color: $gray;
+        padding: 8px 5px;
+        margin-bottom: 10px;
+
+        img{
+            width: 60%;
+        }
+    }
+    .container{
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .box{
+        background-color: $gray;
+        padding: 10px 10px;
+        margin-bottom: 10px;
+        @include fontsize(12);
+        color:$pink_black;
+        
+        img{
+            border: 1.5px solid $blue;
+        }
+        p{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    @media (min-width:551px){
+        padding: 0px 45px;
+        max-width:1024px;
+        margin:0 auto;
+    
+
+        h2{
+            padding: 1.5%;
+            margin: 0px 5px 10px 5px;
+            
+            img{
+                width: 25%;
+            }
+        }
+        .container{
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+        .box{
+            padding: 1.5%;
+            @include fontsize(16);
+            flex-basis: 33%;
+            box-sizing: border-box;
+            flex-grow: 1;
+            margin: 0px 5px 0px 5px;
+
+            img{
+                border: 3px solid $blue;
+            }
+            p{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        }
+    }//PC用
+}//#info
+
+
+/*
+result.html--------------------*/
+#result{
+    height:80%;
+}
+/* main */
+#main{
+    position: relative;
+    height: 100%;
+    margin-bottom:5px;
+
+    @media (min-width:551px){
+        max-width: 1024px;
+        
+        position:static;
+        margin: auto;
+        padding: 10px 50px;
+    }//PC用
+
+}//main
+
+/* slide_area */
+#slide_area{
+    height: 100%;    
+
+    div{
+        height:100%;
+    }
+    .photo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    img{
+        border:10px solid $gray;
+        width: auto;
+        max-height: 100%;
+        padding: 1px;
+        background-color: black;
+    }
+
+    @media (min-width:551px){
+        height:85%;
+        
+        img{
+            border:20px solid $gray;
+        }
+
+    }//PC用
+
+}//slide_area
+
+/* info_container */
+#info_container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display:none;
+    z-index: 2;
+
+    @media (min-width:551px){
+        display: flex;
+        justify-content: space-between;
+        position: static;
+
+        height: 15%;
+        margin-top: 10px;
+        
+        box-sizing: border-box;
+        padding-bottom: 20px;
+    }//PC用
+
+}
+
+/* detail */
+#detail{
+    width: 100%;
+    background-color: $gray;
+    padding: 20px 10px;
+    
+    .container{
+        display: block;
+    }
+    h3{
+        @include fontsize(18);
+        color: $pink;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $pink;
+        margin-bottom:10px;
+        .page_a{
+            @include fontsize(15);
+        }
+    }
+    
+    table{
+        color: $pink_black;
+        @include fontsize(13);
+        text-align: left;
+        width: 100%;
+    }
+    th,td{
+        padding: 5px 0px;
+    }
+
+    @media (min-width:551px){
+        padding: 10px 20px;
+        width: 50%;        
+        background-color: #fff;
+
+        .container{
+            display: flex;
+        }
+        h3{
+            margin-bottom:5px;
+            padding-bottom: 5px;
+        }
+        table{
+            @include fontsize(12);
+            width:50%;
+        }
+        th,td{
+            padding: 1px;
+        }
+    }
+}//detail
+
+/* navi */
+#navi{
+    width:50%;
+    height: 100%;
+    margin-left: 20px;
+    position:relative;
+
+    div{
+        height:100%;
+    }
+
+    .photo{
+        background-color: $gray;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 30%;
+        
+        border:1px solid gray;
+    }
+    .photo:hover{
+        border:1px solid $blue;
+    }
+    .show{
+        border:1px solid $pink;
+    }
+    
+    .container{
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .b_btn,.n_btn{
+        position:absolute;
+        top:25%;
+        @include fontsize(50);
+    }
+    .b_btn:hover,.n_btn:hover{
+        color:$blue;
+    }
+    .b_btn{
+        left:-10px;
+    }
+    .n_btn{
+        right:-10px;
+    }
+    
+    img{
+        max-height: 100%;
+        width: auto;
+        padding: 5px;
+    }
+}//PC用
+
+/* howto */
+#guide{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0.5;
+    z-index: 4;
+    display: none;
+}
+#howto{
+    position: absolute;
+    z-index: 4;
+    display: none;
+    
+    .howto_slide{
+        text-align: center;
+        font-weight:bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .howto_1{
+        @include fontsize(30);
+    }
+    .howto_2{
+        @include fontsize(15);
+    }
+
+    .howto_info{
+        position: absolute;
+        top: 70%;
+        font-weight:bold;
+        padding: 20px 10px;
+        
+        p{
+            margin: 0 auto;
+            width: 70%;
+        }
+    }
+    .howto_3{
+        @include fontsize(12);
+        padding-top:5px;
+        margin-bottom: 20px;
+    }
+    .howto_4{
+        padding-top:10px;
+        @include fontsize(15);
+    }
+
+    @media (min-width:551px){
+        .howto_info{
+            position: static;
+            padding: 20px 0px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            p{
+                width: 100%;
+            }
+        }
+        .howto_1{
+            @include fontsize(48);
+        }
+        .howto_4{
+            padding-top:5px;
+            @include fontsize(18);
+        }
+        .howto_3{
+            padding-top: 20px;
+        }
+
+        .howto_detail{
+            width: 50%;
+            padding-left: 20px;
+        }
+        .howto_navi{
+            width: 50%;
+            padding-left: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            @include fontsize(14);
+            div{
+                display:flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+        }
+        .howto_5{
+            @include fontsize(18);
+            padding-top:10px;
+        }
+    }//PC用    
+}
